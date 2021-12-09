@@ -1,6 +1,8 @@
 <template>
   <div>
-
+    <button v-for="(item, index) in num" :key="index" @click="btnClick(index)">{{index}}</button>
+    <slot name="first"><button>1111</button></slot>
+    <slot name="last"><button>1111</button></slot>
   </div>
 </template>
 
@@ -12,9 +14,9 @@ export default {
     }
   },
   created() {
-    this.filterTest()
-    this.mapTest()
-    this.reduceTest()
+    // this.filterTest()
+    // this.mapTest()
+    // this.reduceTest()
   },
   methods: {
     //三个高阶函数:可以将函数作为参数传进函数里：filter\map\reduce
@@ -38,7 +40,13 @@ export default {
       let newNum = this.num.reduce((previousValue,currentValue)=>
         previousValue + currentValue,0)
         console.log(newNum);
-    }
+    },
+    /* 
+    子组件向父组件传递数据，使用$emit
+    */
+    btnClick(index) {
+      this.$emit('getIndex', index)
+    } 
   }
 }
 </script>

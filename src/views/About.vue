@@ -1,5 +1,15 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <echarts></echarts>
   </div>
 </template>
+
+<script>
+import echarts from '../components/echarts.vue'
+export default {
+  name: 'about',
+  components:{
+    echarts
+  }
+}
+</script>

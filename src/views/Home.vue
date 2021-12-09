@@ -1,7 +1,10 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld @getIndex="getIndex" ref="hello">
+       <p slot="last">是的</p>
+      <input type="text" slot="first" /> 
+    </HelloWorld>
+    <button @click="use">调用函数</button>
   </div>
 </template>
 
@@ -13,6 +16,20 @@ export default {
   name: 'Home',
   components: {
     HelloWorld
+  },
+  data() {
+    return{
+      
+    }
+  },
+  methods: {
+    getIndex(index) {
+      console.log(index);
+    },
+    use() {
+      this.$refs.hello.mapTest()
+      console.log(11111,this.$refs.hello);
+    }
   }
 }
 </script>
