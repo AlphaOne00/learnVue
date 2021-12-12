@@ -19,9 +19,10 @@ export default {
   },
   data() {
     return{
-      
     }
   },
+
+
   methods: {
     getIndex(index) {
       console.log(index);

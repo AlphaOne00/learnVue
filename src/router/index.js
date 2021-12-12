@@ -7,6 +7,11 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
+    // 重定向函数,路由的默认路径方法。
+    redirect: '/home'
+  },
+  {
+    path: '/home',
     name: 'Home',
     component: Home
   },
@@ -21,8 +26,11 @@ const routes = [
 ]
 
 const router = new VueRouter({
+  // 使用的html模式，url中间没有#拼接
   mode: 'history',
   base: process.env.BASE_URL,
+  // 该属性可以指定默认的激活的class名
+  linkActiveClass: 'active',
   routes
 })
 
