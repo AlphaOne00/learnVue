@@ -8,7 +8,10 @@
       <button @click="homeClick">Home1</button>
       <button @click="aboutClick">About1</button>
     </div>
-    <router-view/>
+    <!-- keep-alive可以保证vue组件被切换后不被销毁 -->
+    <keep-alive>
+      <router-view/>
+    </keep-alive>
   </div>
 </template>
 
